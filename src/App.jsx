@@ -90,10 +90,12 @@ const differentiators = [
 const testimonialVideos = [
   {
     src: '/testimonio_02.mp4',
+    poster: '/poster_testimonio_02.jpg',
     title: 'Testimonio GANATECH 1',
   },
   {
     src: '/testimonio_01.mp4',
+    poster: '/poster_testimonio_01.jpg',
     title: 'Testimonio GANATECH 2',
   },
 ];
@@ -827,7 +829,7 @@ function App() {
                 <article className="testimonial-video-card" key={video.src}>
                   <div className="testimonial-video-aura" aria-hidden="true" />
                   <span className="testimonial-video-badge">Testimonio {String(index + 1).padStart(2, '0')}</span>
-                  <video src={video.src} title={video.title} controls preload="metadata" playsInline />
+                  <video src={video.src} poster={video.poster} title={video.title} controls preload="metadata" playsInline />
                 </article>
               ))}
             </div>
