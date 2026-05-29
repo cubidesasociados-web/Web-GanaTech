@@ -20,6 +20,22 @@ export default function ParallaxSection({
   const frameRef = useRef(null);
 
   useEffect(() => {
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      const section = sectionRef.current;
+
+      if (section) {
+        section.style.setProperty('--parallax-bg-y', '0px');
+        section.style.setProperty('--parallax-content-y', '0px');
+      }
+
+      return undefined;
+    }
+
     const updateParallax = () => {
       const section = sectionRef.current;
 
