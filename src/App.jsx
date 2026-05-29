@@ -15,7 +15,7 @@ const images = {
   diff1: '/fondo-frase-destacada.jpeg',
   diff2: '/genetica_exposicion.jpeg',
   diff3: '/tecnicacion_pastos.jpeg',
-  cta: '/sobre_nosotros_01.png',
+  cta: '/sobre_nosotros_01.jpg',
 };
 
 const problemItems = [
@@ -102,19 +102,19 @@ const testimonialVideos = [
 
 const aboutGalleryImages = [
   {
-    src: '/sobre_nosotros_01.png',
+    src: '/sobre_nosotros_01.jpg',
     alt: 'Campo y operación GANATECH',
   },
   {
-    src: '/sobre_nosotros_02.png',
+    src: '/sobre_nosotros_02.jpg',
     alt: 'Ganadería y tecnología GANATECH',
   },
   {
-    src: '/sobre_nosotros_03.png',
+    src: '/sobre_nosotros_03.jpg',
     alt: 'Equipo y campo GANATECH',
   },
   {
-    src: '/sobre_nosotros_04.png',
+    src: '/sobre_nosotros_04.jpg',
     alt: 'Paisaje ganadero GANATECH',
   },
 ];
@@ -964,7 +964,42 @@ function App() {
         contentSpeed={0.04}
       >
         <footer className="site-footer">
-          <div className="container">
+          <div className="container site-footer-grid">
+            <div className="footer-brand">
+              <img src="/logo_transparente.png" alt="GANATECH" className="footer-logo" />
+              <p>
+                Genética, tecnología y campo para una ganadería más rentable.
+                Más de 30 años de experiencia en el Eje Cafetero.
+              </p>
+            </div>
+
+            <nav className="footer-col" aria-label="Enlaces del pie de página">
+              <h4>Navegación</h4>
+              {links.map((link) => (
+                <a key={link.href} href={link.href}>
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+
+            <div className="footer-col">
+              <h4>Contacto</h4>
+              <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
+                WhatsApp: +57 300 348 4934
+              </a>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Ganatech+Santa+Rosa+de+Cabal+Risaralda"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Km 5, vía 2 Quebradas
+                <br />
+                Santa Rosa de Cabal, Risaralda
+              </a>
+            </div>
+          </div>
+
+          <div className="container footer-bottom">
             <small>© 2026 GANATECH — Todos los derechos reservados</small>
           </div>
         </footer>
