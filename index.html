@@ -12,6 +12,17 @@
     <link rel="icon" type="image/png" href="/logo_transparente.png" />
     <link rel="apple-touch-icon" href="/logo_transparente.png" />
 
+    <!-- Precarga de la imagen principal (mejora la velocidad de carga / LCP) -->
+    <link rel="preload" as="image" href="/background-bloque1.jpeg" fetchpriority="high" />
+
+    <!-- Fuentes (carga optimizada con preconnect en lugar de @import en CSS) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600;1,700&family=Inter:wght@400;500;600;700&family=Manrope:wght@500;700;800&display=swap"
+    />
+
     <!-- Open Graph (previews en WhatsApp, Facebook, etc.) -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_CO" />
@@ -34,6 +45,29 @@
     <meta name="twitter:image" content="https://ganatech.com.co/background-bloque1.jpeg" />
 
     <title>GANATECH | Genética y Tecnología Ganadera</title>
+
+    <!-- Datos estructurados para SEO local (Google) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "GANATECH",
+        "description": "Genética lechera, genética de exposición y tecnificación de pastos en Santa Rosa de Cabal, Risaralda. Una ganadería más rentable.",
+        "url": "https://ganatech.com.co/",
+        "telephone": "+573003484934",
+        "image": "https://ganatech.com.co/background-bloque1.jpeg",
+        "logo": "https://ganatech.com.co/logo_transparente.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Km 5, vía 2 Quebradas",
+          "addressLocality": "Santa Rosa de Cabal",
+          "addressRegion": "Risaralda",
+          "addressCountry": "CO"
+        },
+        "areaServed": "Eje Cafetero, Colombia",
+        "hasMap": "https://www.google.com/maps/search/?api=1&query=Ganatech+Santa+Rosa+de+Cabal+Risaralda"
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

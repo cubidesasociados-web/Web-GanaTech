@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600;1,700&family=Inter:wght@400;500;600;700&family=Manrope:wght@500;700;800&display=swap');
+/* Las fuentes de Google se cargan desde index.html (preconnect) para mayor velocidad. */
 
 :root {
   --primary: #f2ca50;

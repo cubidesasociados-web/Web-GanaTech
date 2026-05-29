@@ -2,16 +2,16 @@ import { useEffect, useRef, useState } from 'react';
 import ParallaxSection from './components/ParallaxSection';
 
 const WHATSAPP_NUMBER = '573003484934';
-const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}`;
+const waLink = (message) =>
+  `https://wa.me/${WHATSAPP_NUMBER}${message ? `?text=${encodeURIComponent(message)}` : ''}`;
+const WHATSAPP_LINK = waLink('Hola GANATECH, quiero más información sobre sus servicios.');
 const ASSET_VERSION = '20260421-1840';
 
 const images = {
   hero: '/background-bloque1.jpeg',
-  issue: 'https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1600&q=80',
   services1: '/genetica_lechera.jpeg',
   services2: '/genetica_exposicion.jpeg',
   services3: '/tecnicacion_pastos.jpeg',
-  value: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1400&q=80',
   diff1: '/fondo-frase-destacada.jpeg',
   diff2: '/genetica_exposicion.jpeg',
   diff3: '/tecnicacion_pastos.jpeg',
@@ -699,7 +699,11 @@ function App() {
                       <h3>{service.title}</h3>
                     </div>
                     <p>{service.description}</p>
-                    <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
+                    <a
+                      href={waLink(`Hola GANATECH, me interesa el servicio de ${service.title}. ¿Me pueden dar información y disponibilidad?`)}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       {service.cta} →
                     </a>
                   </div>
